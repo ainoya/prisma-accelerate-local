@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "schedule": [
+    "after 10pm every weekday",
+    "before 5am every weekday",
+    "every weekend"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["node"],
+      "schedule": ["every 30 days"]
+    },
+    {
+      "updateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "separateMajorMinor": false,
+      "separateMultipleMajor": true
+    }
+  ]
+}
